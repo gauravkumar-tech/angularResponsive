@@ -11,7 +11,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 
@@ -32,7 +31,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MatIconModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    NgxSpinnerModule
   ]
 })
 export class AuthModule { }
