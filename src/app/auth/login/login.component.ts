@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { NgxSpinnerService } from 'ngx-spinner';
 import user from "./pass.json";
 
 
@@ -19,7 +18,7 @@ interface pass {
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private spinner: NgxSpinnerService) { }
+  constructor() { }
   message = "loading..."
   users:pass[]=user;
   loginForm!:FormGroup
@@ -32,7 +31,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    this.spinner.show();
 
     let userObj = this.users.filter(e=>e.name == this.loginForm.controls['username'].value)[0]
     
@@ -45,9 +43,9 @@ export class LoginComponent implements OnInit {
       }
     }
 
-    setTimeout(()=>{
-      this.spinner.hide();
-    },2000)
+    // setTimeout(()=>{
+    //   this.spinner.hide();
+    // },2000)
   }
 
 }
