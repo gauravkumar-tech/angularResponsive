@@ -1,0 +1,19 @@
+.body{
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    background-color: rgb(43, 39, 39);
+}
+
+.b{
+    display: inline-block;  
+    margin: 50px;
+    width: fit-content;
+}
+
+.headingH1{
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    color: red;
+    line-height: 2;
+}
