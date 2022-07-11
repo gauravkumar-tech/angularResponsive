@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -6,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  showSpinner = false;
-  constructor() { }
-
+  constructor(private spinner: NgxSpinnerService) { }
+  message = "loading..."
   ngOnInit(): void {
-    this.showSpinner = false;
   }
 
   login(){
-    this.showSpinner=true;
+    this.spinner.show();
+    setTimeout(()=>{
+      this.spinner.hide();
+    },2000)
   }
 
 }
