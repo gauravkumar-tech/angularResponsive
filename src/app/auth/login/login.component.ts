@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  showSpinner = false;
   constructor() { }
 
   ngOnInit(): void {
+    this.showSpinner = false;
+  }
+
+  login(){
+    this.showSpinner=true;
   }
 
 }
