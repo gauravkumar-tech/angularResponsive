@@ -1,0 +1,27 @@
+[  
+    {  
+      "id": 1,  
+      "name": "gaurav",
+      "password":"gaurav123",  
+      "email": "jack@gmail.com",  
+      "gender": "male",
+      "user_role":"admin"  
+
+    },  
+    {  
+      "id": 2,  
+      "name": "Peter",  
+      "password":"gaurav123",
+      "email": "peter@gmail.com",  
+      "gender": "male",
+      "user_role":"normal"    
+    },  
+    {  
+      "id": 3,  
+      "name": "Mary",  
+      "password":"gaurav123",
+      "email": "mary@gmail.com",  
+      "gender": "female",
+      "user_role":"customer"    
+    } 
+  ]  
