@@ -11,14 +11,16 @@ import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import { SignupComponent } from './signup/signup.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,11 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatIconModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule
+  
+  ],
+  providers:[
+    
   ]
 })
 export class AuthModule { }

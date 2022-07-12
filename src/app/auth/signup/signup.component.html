@@ -1,6 +1,6 @@
 
 <div class="body">
-    <div [formGroup]="loginForm">
+    <div [formGroup]="registerForm">
         <div style="width: 100%;text-align: center" >
             <mat-card class="b" fxLayout="column" fxLayoutAlign="space-around center">
                 <div class="headingH1">
@@ -15,21 +15,36 @@
                 </div>
                 <div>
                     <mat-form-field appearance="outline" class="form">
-                        <mat-label>Password</mat-label>
+                        <mat-label>Email</mat-label>
+                        <input formControlName="email" matInput placeholder="Enter Email" type="email">
+                        <mat-icon matSuffix>email</mat-icon>
+                      </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="form">
+                        <mat-label>About</mat-label>
+                        <input formControlName="about" matInput placeholder="Enter About" type="email">
+                        <mat-icon matSuffix>supervisor_account</mat-icon>
+                      </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="form">
+                        <mat-label>Enter Password</mat-label>
                         <input formControlName="password" matInput placeholder="Enter Password" [type]="initialType">
                         <mat-icon matSuffix (click)="changeEyeAndType()">{{initialIcon}}</mat-icon>
                       </mat-form-field>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="space-around center" >
                     <div>
-                        <button class="btn" mat-raised-button color="primary" (click)="login()">Log In
+                        <button class="btn" mat-raised-button color="primary" (click)="registerUser(registerForm.value)">Sign Up
                             <mat-icon style="margin-left: 5px;" matSuffix>exit_to_app</mat-icon>      
                         </button>
                     </div>
                 </div>
                 <div class="mt-5">
-                    Need an Account? <span class="blue">
-                        <a routerLink="/signup">Sign up</a>
+                    Already have an Account?
+                    <span class="blue">
+                        <a routerLink="">Login!!</a>
                     </span> 
                 </div>
             </mat-card>
