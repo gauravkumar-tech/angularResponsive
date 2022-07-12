@@ -1,6 +1,9 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { SignupService } from './signup.service';
+
 
 
 interface userDto{
@@ -17,17 +20,19 @@ interface userDto{
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private singupService: SignupService) { }
+  constructor(private singupService: SignupService,
+    private _snackBar: MatSnackBar,
+    private router: Router ) { }
   registerForm!:FormGroup
   initialType="password";
   initialIcon="remove_red_eye"
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
-      name: new FormControl(null),
-      password: new FormControl(null),
-      email: new FormControl(null),
-      about: new FormControl(null),
+      name: new FormControl(null,Validators.required),
+      password: new FormControl(null,Validators.required),
+      email: new FormControl(null,Validators.required),
+      about: new FormControl(null,Validators.required),
     })
   }
 
@@ -42,13 +47,28 @@ export class SignupComponent implements OnInit {
   }
 
   registerUser(form:userDto){
-    console.log(form);
+    if(this.registerForm.status == "INVALID"){
+      this._snackBar.open("All fields are mandatory", "Fill Again !!",{
+        duration: 3000
+      });
+      return;
+    }
     
-    // this.singupService.registeration(form).subscribe(info=>{
-    //   console.log(info);
-    // },error=>{
-    //   console.log(error);
-    // })
+    this.singupService.registeration(form).subscribe(info=>{
+      this._snackBar.open("User Created Successfully!!", "Let's Login.",{
+        duration: 3000
+      });
+      this.registerForm.reset();
+
+      setTimeout(()=>{
+        this.router.navigateByUrl('/')
+      },3000)
+    },error=>{
+      // console.log(error);
+      this._snackBar.open("User Cannot be created", "Try Again",{
+        duration: 3000
+      });
+    })
   }
 
 }

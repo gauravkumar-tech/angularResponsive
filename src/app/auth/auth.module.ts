@@ -12,7 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SignupComponent } from './signup/signup.component';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -33,6 +33,11 @@ import { SignupComponent } from './signup/signup.component';
     MatIconModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    MatSnackBarModule
+  
+  ],
+  providers:[
+    
   ]
 })
 export class AuthModule { }
