@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import user from "./pass.json";
-
 
 interface pass {  
   id: Number;  
@@ -20,7 +18,6 @@ interface pass {
 export class LoginComponent implements OnInit {
   constructor() { }
   message = "loading..."
-  users:pass[]=user;
   loginForm!:FormGroup
 
   ngOnInit(): void {
@@ -31,17 +28,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-
-    let userObj = this.users.filter(e=>e.name == this.loginForm.controls['username'].value)[0]
-    
-    if(userObj!=undefined || userObj!=null){
-      if(userObj.password == this.loginForm.controls['password'].value){
-        this.message = `welcome ${userObj.name} ...`
-        localStorage.setItem("user",JSON.stringify(userObj));
-      }else{
-
-      }
-    }
 
     // setTimeout(()=>{
     //   this.spinner.hide();
