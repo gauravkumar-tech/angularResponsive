@@ -1,6 +1,4 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+
 <div class="body">
     <div [formGroup]="registerForm">
         <div style="width: 100%;text-align: center" >
@@ -11,7 +9,7 @@
                 <div>
                     <mat-form-field appearance="outline" class="form">
                         <mat-label>User Name</mat-label>
-                        <input formControlName="username" matInput placeholder="Enter username">
+                        <input formControlName="name" matInput placeholder="Enter username">
                         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                       </mat-form-field>
                 </div>
@@ -32,19 +30,19 @@
                 <div>
                     <mat-form-field appearance="outline" class="form">
                         <mat-label>Enter Password</mat-label>
-                        <input formControlName="password" matInput placeholder="Enter Password" type="password">
-                        <mat-icon matSuffix>remove_red_eye</mat-icon>
+                        <input formControlName="password" matInput placeholder="Enter Password" [type]="initialType">
+                        <mat-icon matSuffix (click)="changeEyeAndType()">{{initialIcon}}</mat-icon>
                       </mat-form-field>
                 </div>
                 <div fxLayout="row" fxLayoutAlign="space-around center" >
                     <div>
-                        <button class="btn" mat-raised-button color="primary" >Sign Up
+                        <button class="btn" mat-raised-button color="primary" (click)="registerUser(registerForm.value)">Sign Up
                             <mat-icon style="margin-left: 5px;" matSuffix>exit_to_app</mat-icon>      
                         </button>
                     </div>
                 </div>
                 <div class="mt-5">
-                    Need an Account?
+                    Already have an Account?
                     <span class="blue">
                         <a routerLink="">Login!!</a>
                     </span> 

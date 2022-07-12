@@ -19,19 +19,28 @@ export class LoginComponent implements OnInit {
   constructor() { }
   message = "loading..."
   loginForm!:FormGroup
+  initialType="password";
+  initialIcon="remove_red_eye"
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      username: new FormControl(null),
+      name: new FormControl(null),
       password: new FormControl(null)
     })
   }
+  changeEyeAndType(){
+    if(this.initialType == "password"){
+      this.initialType = "text"
+      this.initialIcon = "visibility_off"
+    }else{
+      this.initialType = "password"
+      this.initialIcon = "remove_red_eye"
+    }
+  }
+
 
   login(){
 
-    // setTimeout(()=>{
-    //   this.spinner.hide();
-    // },2000)
   }
 
 }
