@@ -18,9 +18,13 @@ export class WatchmanGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-       
-      this.userInfo.currentUserObject.subscribe(info =>this.userObject=info);
-      if(this.userObject.token != ""){
+      
+      const json:userToken={
+        token :localStorage.getItem("token")!,
+        userType : localStorage.getItem("userType")! 
+      }
+      this.userInfo.changeUser(json)   
+      if(localStorage.getItem("token") != undefined){
         return true;
       }else{
         this.route.navigateByUrl("")

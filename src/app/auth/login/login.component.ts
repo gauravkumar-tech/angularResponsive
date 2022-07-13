@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
   initialIcon="remove_red_eye"
 
   ngOnInit(): void {
+    localStorage.clear();
     this.loginForm = new FormGroup({
       username: new FormControl(null,Validators.required),
       password: new FormControl(null,Validators.required)
@@ -56,6 +57,8 @@ export class LoginComponent implements OnInit {
     this.loginservice.login(form).subscribe(info=>{
 
       this.userInfoService.changeUser(info);
+      localStorage.setItem("token",info.token)
+      localStorage.setItem("userType",info.userType)
 
       this._snackBar.open("Welcome "+form.username+" !!" , "Let's get you started.",{
         duration: 3000
