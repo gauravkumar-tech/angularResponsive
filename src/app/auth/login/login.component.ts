@@ -69,9 +69,9 @@ export class LoginComponent implements OnInit {
       setTimeout(()=>{
         this.router.navigateByUrl('/dashboard')
       },3000)
-    },error=>{
+    },(error)=>{
       // console.log(error);
-      this._snackBar.open("No Such User", "New User?",{
+      this._snackBar.open(error.error.message, "New User?",{
         duration: 3000
       });
       this.ngxService.stop(); 
