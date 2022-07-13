@@ -9,7 +9,7 @@
                 <div>
                     <mat-form-field appearance="outline" class="form">
                         <mat-label>User Name</mat-label>
-                        <input formControlName="name" matInput placeholder="Enter username">
+                        <input formControlName="username" matInput placeholder="Enter username">
                         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                       </mat-form-field>
                 </div>
@@ -22,7 +22,7 @@
                 </div>
                 <div fxLayout="row" fxLayoutAlign="space-around center" >
                     <div>
-                        <button class="btn" mat-raised-button color="primary" (click)="login()">Log In
+                        <button class="btn" mat-raised-button color="primary" (click)="login(loginForm.value)">Log In
                             <mat-icon style="margin-left: 5px;" matSuffix>exit_to_app</mat-icon>      
                         </button>
                     </div>

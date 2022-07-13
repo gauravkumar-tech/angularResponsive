@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { UserInfoService } from 'src/app/services/user-info.service';
+import { LoginService } from './login.service';
 
-interface pass {  
-  id: Number;  
-  name: String;  
-  email: String;  
-  gender: String;  
+interface userToken {    
+  username: String;  
   password: String;  
-  user_role: String;    
 }  
 
 @Component({
@@ -17,7 +17,12 @@ interface pass {
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private ngxService: NgxUiLoaderService) { }
+  constructor(private ngxService: NgxUiLoaderService,
+    private loginservice:LoginService,
+    private _snackBar: MatSnackBar,
+    private router: Router,
+    private userInfoService : UserInfoService) { }
+
   message = "loading..."
   loginForm!:FormGroup
   initialType="password";
@@ -25,8 +30,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      name: new FormControl(null),
-      password: new FormControl(null)
+      username: new FormControl(null,Validators.required),
+      password: new FormControl(null,Validators.required)
     })
   }
   changeEyeAndType(){
@@ -39,9 +44,35 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  login(form:userToken){
+    if(this.loginForm.status == "INVALID"){
+      this._snackBar.open("All fields are mandatory", "Fill Again !!",{
+        duration: 3000
+      });
+      return;
+    }
+    this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
 
-  login(){
+    this.loginservice.login(form).subscribe(info=>{
 
+      this.userInfoService.changeUser(info);
+
+      this._snackBar.open("Welcome "+form.username+" !!" , "Let's get you started.",{
+        duration: 3000
+      });
+      this.loginForm.reset();
+      this.ngxService.stop(); 
+
+      setTimeout(()=>{
+        this.router.navigateByUrl('/dashboard')
+      },3000)
+    },error=>{
+      // console.log(error);
+      this._snackBar.open("No Such User", "New User?",{
+        duration: 3000
+      });
+      this.ngxService.stop(); 
+    })
   }
 
 }
