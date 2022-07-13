@@ -33,8 +33,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatIconModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
-  
+    MatSnackBarModule,
   ],
   providers:[
     

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 interface pass {  
   id: Number;  
@@ -16,7 +17,7 @@ interface pass {
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor() { }
+  constructor(private ngxService: NgxUiLoaderService) { }
   message = "loading..."
   loginForm!:FormGroup
   initialType="password";
