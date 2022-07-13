@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxUiLoaderConfig, NgxUiLoaderModule } from "ngx-ui-loader";
+import { PagenotfoundComponent } from './404pageNotFound/pagenotfound/pagenotfound.component';
 
 let ngxConig :NgxUiLoaderConfig  =
 {
@@ -41,7 +42,8 @@ let ngxConig :NgxUiLoaderConfig  =
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
