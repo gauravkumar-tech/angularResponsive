@@ -1,0 +1,31 @@
+<!-- header app bar -->
+<div fxLayout="row">
+  <mat-toolbar color="primary">
+    <span>{{title}}</span>
+    <span class="example-spacer"></span>
+    <button mat-button matTooltip="Logout" (click)="logout()" class="show">
+      Logout <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>
+
+<!-- side bar -->
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <!-- content for side nav -->
+    <!-- <a routerLink="/user/dashboard/pc">post</a> -->
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+  <mat-drawer-content >
+    <!-- main content will be shown here -->
+    <!-- <div class="show"> -->
+      <router-outlet></router-outlet>
+    <!-- </div> -->
+
+    <div id="foo">
+      <button mat-fab color="primary"  matTooltip="open menu" (click)="drawer.toggle()" aria-label="Example icon button with a delete icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

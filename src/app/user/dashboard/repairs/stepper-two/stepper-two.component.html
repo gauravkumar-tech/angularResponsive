@@ -1,0 +1,22 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+
+<mat-card style="background-color: #60A3D9;">
+    <mat-card>
+        <form>
+            <ng-template matStepLabel>Pay Now Or Pay on Delivery</ng-template>
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <span class="pay">Pay Now!! <span style="color: red;">₹ 1</span></span>
+                <img width="200" height="200" src="assets/images/QrCode.png">
+                <span class="payScam">Please Do not Refresh page!!</span>
+                <span class="payScam">You can always Pay Later, Click Next or Go Back.</span>
+            </div>
+
+            <div  dir="rtl" fxLayoutGap="20px">
+                <button mat-raised-button color="primary" matStepperNext>Next</button>
+                <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+            </div>
+        </form>
+    </mat-card>
+</mat-card>

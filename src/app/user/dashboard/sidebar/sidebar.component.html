@@ -1,0 +1,31 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+
+<div fxFlex fxLayout="column" fxLayoutAlign="space-between start">
+    <div mat-card-avatar class="example-header-image"></div>
+    <div>
+        <span class="headingdeams">Welcome User</span>
+    </div>
+    <div>
+        <mat-list>
+            <mat-list-item> </mat-list-item>
+            <mat-divider></mat-divider><mat-list-item> 
+                <a routerLink="/user/dashboard">
+                <button mat-raised-button color="accent" matTooltip="My Website">
+                    Dashboard
+                    <mat-icon>alternate_email</mat-icon></button></a>
+            </mat-list-item><mat-divider></mat-divider>
+            <mat-divider></mat-divider><mat-list-item> 
+                <a routerLink="/user/dashboard/repairs">
+                <button mat-raised-button color="primary" matTooltip="Phone Repairs">
+                    Repairs
+                     <mat-icon>settings</mat-icon></button></a>    
+            </mat-list-item><mat-divider></mat-divider>
+            <mat-divider></mat-divider><mat-list-item> 
+                <button mat-raised-button color="warn" matTooltip="Website">About Developer <mat-icon> directions</mat-icon></button>    
+            </mat-list-item><mat-divider></mat-divider>
+           </mat-list>
+           <mat-list-item> </mat-list-item>
+    </div>
+</div>
