@@ -1,46 +1,21 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+
 <mat-card style="background-color: #60A3D9;">
-                            
-                            
     <mat-card>
-        <form [formGroup]="firstFormGroup">
+        <form>
             <ng-template matStepLabel>Pay Now Or Pay on Delivery</ng-template>
-
-            <div fxLayout="column">
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Name</mat-label>
-                    <input matInput placeholder="Last name, First name"
-                        formControlName="firstCtrl" required>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Telephone</mat-label>
-                    <input matInput appOnlyNumbers placeholder="Enter Telephone"
-                        formControlName="telephone" required>
-                </mat-form-field>
-
-                <mat-form-field appearance="fill">
-                    <mat-label>Select Model</mat-label>
-                    <mat-select required>
-                      <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-
-                <mat-form-field appearance="fill" fxFlex.gt-xs="10" fxFlex.gt-md="40">
-                    <mat-label>Complaint</mat-label>
-                    <textarea matInput placeholder="Enter Description about complaint"
-                        formControlName="complaint" required></textarea>
-                </mat-form-field>
-
+            <div fxLayout="column" fxLayoutAlign="center center">
+                <span class="pay">Pay Now!! <span style="color: red;">₹ 1</span></span>
+                <img width="200" height="200" src="assets/images/QrCode.png">
+                <span class="payScam">Please Do not Refresh page!!</span>
+                <span class="payScam">You can always Pay Later, Click Next or Go Back.</span>
             </div>
 
             <div  dir="rtl" fxLayoutGap="20px">
-                <!-- <button mat-raised-button color="primary" matStepperNext (click)="sendValue(firstFormGroup.value)">Next</button> -->
                 <button mat-raised-button color="primary" matStepperNext>Next</button>
                 <button mat-raised-button color="primary" matStepperPrevious>Back</button>
-           
             </div>
         </form>
     </mat-card>

@@ -27,6 +27,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { OnlyNumbersDirective } from './dashboard/only-numbers.directive';
 import { StepperOneComponent } from './dashboard/repairs/stepper-one/stepper-one.component';
 import { StepperTwoComponent } from './dashboard/repairs/stepper-two/stepper-two.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { StepperTwoComponent } from './dashboard/repairs/stepper-two/stepper-two
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule
   ],
   exports:[
     DashboardComponent,
