@@ -18,6 +18,7 @@ import { AreachartComponent } from '../shared/areachart/areachart.component';
 import { SharedModule } from '../shared/shared.module';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { RepairsComponent } from './dashboard/repairs/repairs.component';
 
 
 
@@ -26,6 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     DashboardComponent,
     MaindashbardComponent,
     SidebarComponent,
+    RepairsComponent,
   ],
   imports: [
     CommonModule,

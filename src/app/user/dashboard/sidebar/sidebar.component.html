@@ -11,10 +11,16 @@
         <mat-list>
             <mat-list-item> </mat-list-item>
             <mat-divider></mat-divider><mat-list-item> 
-                <button mat-raised-button color="primary" matTooltip="Phone Repairs">Repairs <mat-icon>settings</mat-icon></button>    
+                <a routerLink="/user/dashboard">
+                <button mat-raised-button color="accent" matTooltip="My Website">
+                    Dashboard
+                    <mat-icon>alternate_email</mat-icon></button></a>
             </mat-list-item><mat-divider></mat-divider>
             <mat-divider></mat-divider><mat-list-item> 
-                <button mat-raised-button color="accent" matTooltip="My Website">Contact Me <mat-icon>alternate_email</mat-icon></button>    
+                <a routerLink="/user/dashboard/repairs">
+                <button mat-raised-button color="primary" matTooltip="Phone Repairs">
+                    Repairs
+                     <mat-icon>settings</mat-icon></button></a>    
             </mat-list-item><mat-divider></mat-divider>
             <mat-divider></mat-divider><mat-list-item> 
                 <button mat-raised-button color="warn" matTooltip="Website">About Developer <mat-icon> directions</mat-icon></button>    
