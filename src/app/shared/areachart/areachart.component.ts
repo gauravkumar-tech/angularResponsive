@@ -15,7 +15,7 @@ export class AreachartComponent implements OnInit {
           type: 'area'
       },
       title: {
-          text: 'Historic and Estimated Worldwide Mobile Repairs Done by Region'
+          text: 'Estimated Mobile Repairs Done by Region'
       },
       subtitle: {
           text: "Source: Gaurav's Phone Repairs"

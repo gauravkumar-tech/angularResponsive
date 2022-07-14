@@ -17,6 +17,8 @@ import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 import { AreachartComponent } from '../shared/areachart/areachart.component';
 import { SharedModule } from '../shared/shared.module';
 import {MatDividerModule} from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import {MatDividerModule} from '@angular/material/divider';
     RouterModule,
     MatListModule,
     SharedModule,
-    MatDividerModule
+    MatDividerModule,
+    FlexLayoutModule
   ],
   exports:[
     DashboardComponent,

@@ -4,7 +4,7 @@
     <span>{{title}}</span>
     <span class="example-spacer"></span>
     <button mat-button matTooltip="Logout" (click)="logout()" class="show">
-      Logout
+      Logout <mat-icon>exit_to_app</mat-icon>
     </button>
   </mat-toolbar>
 </div>
@@ -21,7 +21,7 @@
     <router-outlet></router-outlet>
 
     <div id="foo">
-      <button mat-fab color="primary" (click)="drawer.toggle()" aria-label="Example icon button with a delete icon">
+      <button mat-fab color="primary"  matTooltip="open menu" (click)="drawer.toggle()" aria-label="Example icon button with a delete icon">
         <mat-icon>menu</mat-icon>
       </button>
     </div>
