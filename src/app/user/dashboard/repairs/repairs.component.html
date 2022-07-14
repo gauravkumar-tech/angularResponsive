@@ -21,11 +21,16 @@
 
                     <mat-step>
                         <ng-template matStepLabel>Done</ng-template>
-                        <p>You are now done.</p>
-                        <div>
-                            <button mat-button matStepperPrevious>Back</button>
-                            <button mat-button (click)="stepper.reset()">Reset</button>
-                        </div>
+                        <mat-card style="background-color: #003B73;">
+                            <mat-card>
+
+
+                                <div dir="rtl" fxLayoutGap="20px">
+                                    <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+                                    <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
+                                </div>
+                            </mat-card>
+                        </mat-card>
                     </mat-step>
                 </div>
             </mat-stepper>
