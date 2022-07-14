@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   showFiller = false;
 
   ngOnInit(): void {
-   
+   this.router.navigateByUrl("user/(userm:post)")
   }
 
   logout(){

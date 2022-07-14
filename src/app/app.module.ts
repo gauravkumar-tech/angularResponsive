@@ -7,6 +7,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxUiLoaderConfig, NgxUiLoaderModule } from "ngx-ui-loader";
 import { PagenotfoundComponent } from './404pageNotFound/pagenotfound/pagenotfound.component';
+import { RouterModule } from '@angular/router';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { DashboardComponent } from './user/dashboard/dashboard.component';
+import { PostComponent } from './user/post/post.component';
+import { UserModule } from './user/user.module';
+
 
 let ngxConig :NgxUiLoaderConfig  =
 {
@@ -43,14 +55,26 @@ let ngxConig :NgxUiLoaderConfig  =
 @NgModule({
   declarations: [
     AppComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    NgxUiLoaderModule.forRoot(ngxConig)
+    NgxUiLoaderModule.forRoot(ngxConig),
+    RouterModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatGridListModule,
+    UserModule
+
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

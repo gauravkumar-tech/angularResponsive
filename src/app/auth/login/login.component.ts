@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
       this.ngxService.stop(); 
 
       setTimeout(()=>{
-        this.router.navigateByUrl('/dashboard')
+        this.router.navigateByUrl('/user')
       },3000)
     },(error)=>{
       // console.log(error);
