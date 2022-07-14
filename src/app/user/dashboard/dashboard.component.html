@@ -1,46 +1,29 @@
 <!-- header app bar -->
 <div fxLayout="row">
-    <mat-toolbar color="primary">
-        <span>{{title}}</span>
-        <span class="example-spacer"></span>
-        <button mat-button matTooltip="Logout" (click)="logout()" class="show">
-            Logout 
-          </button>  
-    </mat-toolbar>
+  <mat-toolbar color="primary">
+    <span>{{title}}</span>
+    <span class="example-spacer"></span>
+    <button mat-button matTooltip="Logout" (click)="logout()" class="show">
+      Logout
+    </button>
+  </mat-toolbar>
 </div>
 
 <!-- side bar -->
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <!-- content for side nav -->
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <!-- content for side nav -->
+    <!-- <a routerLink="/user/dashboard/pc">post</a> -->
 
-    </mat-drawer>
-        <mat-drawer-content >
-           <!-- main content will be shown here -->
-           DASHBOARD
-            <!-- <mat-grid-list cols="4" rowHeight="100px" style="margin: 10px;">
-                <mat-grid-tile [colspan]="4" [rowspan]="4">
-                 <mat-card class="child">
+  </mat-drawer>
+  <mat-drawer-content>
+    <!-- main content will be shown here -->
+    <router-outlet></router-outlet>
 
-                 </mat-card>
-                </mat-grid-tile>
-                
-              </mat-grid-list> -->
-              <!-- no footer -->
-  <!-- <a [routerLink]="['/user',{
-    outlets:{
-      'userm':['post']
-    }
-  }]"></a> -->
-
-  <router-outlet name="userm"></router-outlet>
-  
-  <div id="foo">
-                <button mat-fab color="primary" (click)="drawer.toggle()" aria-label="Example icon button with a delete icon">
-                    <mat-icon>menu</mat-icon>
-                  </button>
-                </div>
-        </mat-drawer-content>
-  </mat-drawer-container>
-
- 
+    <div id="foo">
+      <button mat-fab color="primary" (click)="drawer.toggle()" aria-label="Example icon button with a delete icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

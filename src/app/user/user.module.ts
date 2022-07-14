@@ -10,14 +10,16 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { PostComponent } from './post/post.component';
 import { RouterModule } from '@angular/router';
+import { PcComponent } from './dashboard/pc/pc.component';
+import { MaindashbardComponent } from './dashboard/maindashbard/maindashbard.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    PostComponent
+    PcComponent,
+    MaindashbardComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,6 @@ import { RouterModule } from '@angular/router';
   ],
   exports:[
     DashboardComponent,
-    PostComponent
   ]
 })
 export class UserModule { }

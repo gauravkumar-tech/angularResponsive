@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,11 +10,10 @@ export class DashboardComponent implements OnInit {
   title="Phone Repairs"
   isShow=true;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private route: ActivatedRoute) { }
   showFiller = false;
 
   ngOnInit(): void {
-   this.router.navigateByUrl("user/(userm:post)")
   }
 
   logout(){

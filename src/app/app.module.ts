@@ -15,8 +15,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { DashboardComponent } from './user/dashboard/dashboard.component';
-import { PostComponent } from './user/post/post.component';
 import { UserModule } from './user/user.module';
 
 
