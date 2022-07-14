@@ -4,5 +4,54 @@
     float: right;
     height: 100%;
     width: 100%;
+    // background-color: #BFD7ED;
+}
+.space{
+    margin: 0.5px;
+    position: relative;
+    float: right;
+    height: 100%;
+    width: 100%;
     background-color: #BFD7ED;
 }
+
+.divider{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .show{
+        display: none
+    }
+  }
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+      .show{
+          display: none
+      }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+      .show{
+          display: block
+      }
+  }
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+      .show{
+          display: block
+      }
+  }
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+      .show{
+          display: block
+      }
+  }
+  

@@ -11,15 +11,19 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { RouterModule } from '@angular/router';
-import { PcComponent } from './dashboard/pc/pc.component';
 import { MaindashbardComponent } from './dashboard/maindashbard/maindashbard.component';
+import {MatListModule} from '@angular/material/list';
+import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
+import { AreachartComponent } from '../shared/areachart/areachart.component';
+import { SharedModule } from '../shared/shared.module';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    PcComponent,
-    MaindashbardComponent
+    MaindashbardComponent,
+    SidebarComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,10 @@ import { MaindashbardComponent } from './dashboard/maindashbard/maindashbard.com
     MatSidenavModule,
     MatCardModule,
     MatGridListModule,
-    RouterModule
+    RouterModule,
+    MatListModule,
+    SharedModule,
+    MatDividerModule
   ],
   exports:[
     DashboardComponent,
