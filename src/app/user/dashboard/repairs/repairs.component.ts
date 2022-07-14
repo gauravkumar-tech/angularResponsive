@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-repairs',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepairsComponent implements OnInit {
 
-  constructor() { }
+  
+ 
+  secondFormGroup = this._formBuilder.group({
+    secondCtrl: ['', Validators.required],
+  });
+  isLinear = false;
+  getVal !: string
 
+
+  constructor(private _formBuilder: FormBuilder) {}
   ngOnInit(): void {
+    
   }
 
 }

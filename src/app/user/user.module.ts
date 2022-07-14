@@ -19,7 +19,14 @@ import { SharedModule } from '../shared/shared.module';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RepairsComponent } from './dashboard/repairs/repairs.component';
-
+import {MatStepperModule} from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { OnlyNumbersDirective } from './dashboard/only-numbers.directive';
+import { StepperOneComponent } from './dashboard/repairs/stepper-one/stepper-one.component';
+import { StepperTwoComponent } from './dashboard/repairs/stepper-two/stepper-two.component';
 
 
 @NgModule({
@@ -28,6 +35,9 @@ import { RepairsComponent } from './dashboard/repairs/repairs.component';
     MaindashbardComponent,
     SidebarComponent,
     RepairsComponent,
+    OnlyNumbersDirective,
+    StepperOneComponent,
+    StepperTwoComponent,
   ],
   imports: [
     CommonModule,
@@ -43,7 +53,13 @@ import { RepairsComponent } from './dashboard/repairs/repairs.component';
     MatListModule,
     SharedModule,
     MatDividerModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatSelectModule
   ],
   exports:[
     DashboardComponent,

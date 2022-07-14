@@ -1,1 +1,36 @@
-<p>repairs works!</p>
+<mat-grid-list cols="4" rowHeight="100px" style="margin: 10px;">
+    <mat-grid-tile [colspan]="4" [rowspan]="6">
+        <mat-card class="child">
+
+
+            <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+                {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+              </button> -->
+
+            <mat-stepper [linear]="isLinear" #stepper>
+
+                <div fxFlex fxLayout="row" fxLayoutAlign="center center">
+                    <mat-step label="Fill Details">
+                        <!-- first step -->
+                        <app-stepper-one></app-stepper-one>
+                    </mat-step>
+
+                    <mat-step label="Pay Now Or Pay on Delivery">
+                        <app-stepper-two></app-stepper-two>
+                    </mat-step>
+
+                    <mat-step>
+                        <ng-template matStepLabel>Done</ng-template>
+                        <p>You are now done.</p>
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button (click)="stepper.reset()">Reset</button>
+                        </div>
+                    </mat-step>
+                </div>
+            </mat-stepper>
+
+
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

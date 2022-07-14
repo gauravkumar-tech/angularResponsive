@@ -16,9 +16,11 @@
     <!-- <a routerLink="/user/dashboard/pc">post</a> -->
     <app-sidebar></app-sidebar>
   </mat-drawer>
-  <mat-drawer-content>
+  <mat-drawer-content >
     <!-- main content will be shown here -->
-    <router-outlet></router-outlet>
+    <!-- <div class="show"> -->
+      <router-outlet></router-outlet>
+    <!-- </div> -->
 
     <div id="foo">
       <button mat-fab color="primary"  matTooltip="open menu" (click)="drawer.toggle()" aria-label="Example icon button with a delete icon">
