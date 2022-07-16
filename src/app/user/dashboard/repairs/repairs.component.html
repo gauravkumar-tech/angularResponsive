@@ -17,25 +17,27 @@
 
                     <mat-step label="Pay Now Or Pay on Delivery">
                         <app-stepper-two></app-stepper-two>
+                        <div style="text-align: center; margin-top: 5px;">
+                            <button mat-raised-button color="primary" matTooltip="Reset" (click)="stepper.reset();restForm()"><mat-icon>refresh</mat-icon></button>
+                        </div>
                     </mat-step>
-
+<!-- 
                     <mat-step>
                         <ng-template matStepLabel>Done</ng-template>
                         <mat-card style="background-color: #003B73;">
                             <mat-card>
-
-
+                                <app-stepper-three></app-stepper-three>
                                 <div dir="rtl" fxLayoutGap="20px">
-                                    <button mat-raised-button color="primary" matStepperPrevious>Back</button>
-                                    <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
+                                    <button mat-raised-button color="primary" matTooltip="Back" matStepperPrevious><mat-icon>skip_previous</mat-icon></button>
+                                    <button mat-raised-button matTooltip="Save" color="accent" ><mat-icon>save</mat-icon></button>
+                                    <button mat-raised-button color="primary" matTooltip="Reset" (click)="stepper.reset()"><mat-icon>refresh</mat-icon></button>
                                 </div>
                             </mat-card>
                         </mat-card>
                     </mat-step>
+ -->
                 </div>
             </mat-stepper>
-
-
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>

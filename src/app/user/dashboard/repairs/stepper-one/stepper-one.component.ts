@@ -1,5 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { RepairSaveService } from 'src/app/services/repair-save.service';
 import { EventEmitter } from 'stream';
 
 export interface Mobile {
@@ -8,9 +10,10 @@ export interface Mobile {
 }
 
 export interface firstFormGroupVal {
+  model: string;
   firstCtrl: string,
-    telephone: string,
-    complaint: string,
+  telephone: string,
+  complaint: string,
 }
 
 @Component({
@@ -24,10 +27,15 @@ export class StepperOneComponent implements OnInit {
     firstCtrl: ['', Validators.required],
     telephone: ['', Validators.required],
     complaint: ['', Validators.required],
+    model: ['', Validators.required],
   });
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder,private _snackBar: MatSnackBar,
+    private saveService: RepairSaveService) { }
+  
+  currentObj!:firstFormGroupVal;
 
   ngOnInit(): void {
+  
   }
 
   foods: Mobile[] = [
@@ -41,6 +49,19 @@ export class StepperOneComponent implements OnInit {
       firstCtrl: form.firstCtrl,
       telephone: form.telephone,
       complaint: form.complaint,
+      model:form.model
     }
+    if(this.firstFormGroup.status == 'INVALID'){
+      this._snackBar.open("Form 1 Fields are mandatory", "Please Fill them !!",{
+        duration: 3000
+      });
+      return;
+    }
+    this._snackBar.open("Form 1 Valid!! Saved", "Cannot Re-Edit Here !!",{
+      duration: 3000
+    });
+    this.saveService.changeObj(json);
+    this.firstFormGroup.reset();
+
   }
 }

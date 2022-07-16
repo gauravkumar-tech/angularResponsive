@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
     this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
 
     this.loginservice.login(form).subscribe(info=>{
-
+      localStorage.clear();
       this.userInfoService.changeUser(info);
       localStorage.setItem("token",info.token)
       localStorage.setItem("userType",info.userType)

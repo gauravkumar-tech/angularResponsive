@@ -1,13 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
-
-export interface PeriodicElement {
-  Amount: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {Amount: '1'},
-];
-
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { RepairSaveService } from 'src/app/services/repair-save.service';
+import { firstFormGroupVal, StepperOneComponent } from '../stepper-one/stepper-one.component';
 
 
 @Component({
@@ -16,11 +10,51 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./stepper-two.component.scss']
 })
 export class StepperTwoComponent implements OnInit {
-  constructor() { }
-
-  displayedColumns: string[] = [ 'Amount'];
-  dataSource = ELEMENT_DATA;
+  constructor( private saveService: RepairSaveService,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
+  }
+
+  currentObj!:firstFormGroupVal
+  ref!:StepperOneComponent
+
+  save(){
+    this.saveService.currentUserObject.subscribe(info=>this.currentObj = info);
+console.log(this.currentObj);
+
+
+
+    if(this.currentObj.complaint == "" && this.currentObj.telephone == "" && this.currentObj.model == ""  && this.currentObj.firstCtrl == "" ){
+        this._snackBar.open("Form 1 Fields are mandatory", "Please Fill them !!",{
+          duration: 3000
+        });
+    }else{
+      // call save service
+    const json = {
+      token:localStorage.getItem("token"),
+      complaint:this.currentObj.complaint,
+      telephone:this.currentObj.telephone,
+      model:this.currentObj.model,
+      firstCtrl:this.currentObj.firstCtrl
+    }
+
+      this.saveService.createRepairs(json).subscribe(info=>{
+       
+        if(info.bookingDone == true){
+          this._snackBar.open("Booking Done Successful!!", "Bookind id "+info.bookingNo,{
+            duration: 3000
+          });
+        }
+      },error=>{
+        console.log(error);
+        this._snackBar.open("Booking Cannot be Done at the Moment!!", "Please Try Again.",{
+          duration: 3000
+        });
+      })
+
+
+      this.saveService.changeObj(this.saveService.defeaultUserObj)
+
+    }
   }
 }

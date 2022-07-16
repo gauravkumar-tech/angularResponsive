@@ -9,10 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   title="Phone Repairs"
   isShow=true;
+  
 
   constructor(private router:Router,private route: ActivatedRoute) { }
   showFiller = false;
-
+  
   ngOnInit(): void {
   }
 

@@ -11,16 +11,16 @@
 
 <!-- side bar -->
 <mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
+  <mat-drawer #drawer class="example-sidenav" mode="over">
     <!-- content for side nav -->
     <!-- <a routerLink="/user/dashboard/pc">post</a> -->
     <app-sidebar></app-sidebar>
   </mat-drawer>
-  <mat-drawer-content >
+  <mat-drawer-content class="bg-img">
     <!-- main content will be shown here -->
-    <!-- <div class="show"> -->
+    <!-- check if menu is open and hide in mobile view -->
+
       <router-outlet></router-outlet>
-    <!-- </div> -->
 
     <div id="foo">
       <button mat-fab color="primary"  matTooltip="open menu" (click)="drawer.toggle()" aria-label="Example icon button with a delete icon">

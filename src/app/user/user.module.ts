@@ -28,6 +28,11 @@ import { OnlyNumbersDirective } from './dashboard/only-numbers.directive';
 import { StepperOneComponent } from './dashboard/repairs/stepper-one/stepper-one.component';
 import { StepperTwoComponent } from './dashboard/repairs/stepper-two/stepper-two.component';
 import {MatTableModule} from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { StepperThreeComponent } from './dashboard/repairs/stepper-three/stepper-three.component';
+import {MatRadioModule} from '@angular/material/radio';
+import { AllrepairsComponent } from './dashboard/allrepairs/allrepairs.component';
+import { DeveloperswebsiteComponent } from './dashboard/developerswebsite/developerswebsite.component';
 
 
 @NgModule({
@@ -39,6 +44,9 @@ import {MatTableModule} from '@angular/material/table';
     OnlyNumbersDirective,
     StepperOneComponent,
     StepperTwoComponent,
+    StepperThreeComponent,
+    AllrepairsComponent,
+    DeveloperswebsiteComponent,
   ],
   imports: [
     CommonModule,
@@ -61,7 +69,9 @@ import {MatTableModule} from '@angular/material/table';
     ReactiveFormsModule,
     MatInputModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule,
+    MatRadioModule
   ],
   exports:[
     DashboardComponent,
