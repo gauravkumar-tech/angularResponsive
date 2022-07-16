@@ -23,8 +23,7 @@
                         <ng-template matStepLabel>Done</ng-template>
                         <mat-card style="background-color: #003B73;">
                             <mat-card>
-
-
+                                <app-stepper-three></app-stepper-three>
                                 <div dir="rtl" fxLayoutGap="20px">
                                     <button mat-raised-button color="primary" matStepperPrevious>Back</button>
                                     <button mat-raised-button color="primary" (click)="stepper.reset()">Reset</button>
@@ -34,8 +33,6 @@
                     </mat-step>
                 </div>
             </mat-stepper>
-
-
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>

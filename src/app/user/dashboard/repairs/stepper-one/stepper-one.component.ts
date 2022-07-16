@@ -1,5 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { EventEmitter } from 'stream';
 
 export interface Mobile {
@@ -24,9 +25,10 @@ export class StepperOneComponent implements OnInit {
     firstCtrl: ['', Validators.required],
     telephone: ['', Validators.required],
     complaint: ['', Validators.required],
+    model: ['', Validators.required],
   });
-  constructor(private _formBuilder: FormBuilder) { }
-
+  constructor(private _formBuilder: FormBuilder,private _snackBar: MatSnackBar) { }
+  
   ngOnInit(): void {
   }
 
@@ -41,6 +43,12 @@ export class StepperOneComponent implements OnInit {
       firstCtrl: form.firstCtrl,
       telephone: form.telephone,
       complaint: form.complaint,
+    }
+    if(this.firstFormGroup.status == 'INVALID'){
+      this._snackBar.open("Form 1 Fields are mandatory", "Please Fill them !!",{
+        duration: 3000
+      });
+      return;
     }
   }
 }

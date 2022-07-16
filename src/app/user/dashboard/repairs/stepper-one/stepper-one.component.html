@@ -1,45 +1,46 @@
 <mat-card style="background-color: #BFD7ED;">
-                            
-                            
+
+
     <mat-card>
         <form [formGroup]="firstFormGroup">
             <ng-template matStepLabel>Fill out your details</ng-template>
 
             <div fxLayout="column">
-
+                <div style="text-align: center;">
+                    <img width="80" height="80" src="assets/images/repair.jpg">
+                </div>
                 <mat-form-field appearance="fill">
                     <mat-label>Name</mat-label>
-                    <input matInput placeholder="Last name, First name"
-                        formControlName="firstCtrl" required>
+                    <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Telephone</mat-label>
-                    <input matInput appOnlyNumbers placeholder="Enter Telephone"
-                        formControlName="telephone" required>
+                    <input matInput appOnlyNumbers placeholder="Enter Telephone" formControlName="telephone" required>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Select Model</mat-label>
-                    <mat-select required>
-                      <mat-option *ngFor="let food of foods" [value]="food.value">
-                        {{food.viewValue}}
-                      </mat-option>
+                    <mat-select required formControlName="model">
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
                     </mat-select>
-                  </mat-form-field>
+                </mat-form-field>
 
                 <mat-form-field appearance="fill" fxFlex.gt-xs="10" fxFlex.gt-md="40">
                     <mat-label>Complaint</mat-label>
-                    <textarea matInput placeholder="Enter Description about complaint"
-                        formControlName="complaint" required></textarea>
+                    <textarea matInput placeholder="Enter Description about complaint" formControlName="complaint"
+                        required></textarea>
                 </mat-form-field>
 
             </div>
 
 
 
-            <div  dir="rtl" fxLayoutGap="20px">
-                <button mat-raised-button color="primary" matStepperNext (click)="sendValue(firstFormGroup.value)">Next</button>
+            <div dir="rtl" fxLayoutGap="20px">
+                <button mat-raised-button color="primary" matStepperNext
+                    (click)="sendValue(firstFormGroup.value)">Next</button>
             </div>
         </form>
     </mat-card>
