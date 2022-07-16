@@ -24,7 +24,7 @@ export class RepairSaveService implements HttpInterceptor{
     
     let jwtToken = req.clone({
       setHeaders:{
-        Authorization:'Bearer '+localStorage.getItem("token")
+        Authorization:'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJnYXVyYXYua3VtYXJAZ21haWwuY29tIiwiZXhwIjoxNjU3OTk2NzYzLCJpYXQiOjE2NTc5Nzg3NjN9.8FRzADhRYlsuBQeG_0EDq8f4_NoCdmE40VTawluozAEszlpibF3FXHWG_XOoIn3cjPd9ALMIxz_O4k6fxSejQA'
       }
     })
     return next.handle(jwtToken);
@@ -36,6 +36,10 @@ export class RepairSaveService implements HttpInterceptor{
 
   createRepairs(json:any):Observable<any>{
     return this.http.post(environment.baseApi +"api/repairs/",json)
+  }
+
+  getAllRepairs():Observable<any>{
+    return this.http.get(environment.baseApi +"api/repairs/"+localStorage.getItem("token"))
   }
 
 }
