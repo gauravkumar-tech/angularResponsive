@@ -36,11 +36,9 @@
 
             </div>
 
-
-
             <div dir="rtl" fxLayoutGap="20px">
-                <button mat-raised-button color="primary" matStepperNext
-                    (click)="sendValue(firstFormGroup.value)">Next</button>
+                <button mat-raised-button color="primary" matTooltip="Next" matStepperNext
+                    (click)="sendValue(firstFormGroup.value)"><mat-icon>skip_next</mat-icon></button>
             </div>
         </form>
     </mat-card>

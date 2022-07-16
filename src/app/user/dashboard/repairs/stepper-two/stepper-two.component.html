@@ -10,13 +10,24 @@
                 <span class="pay">Pay Now!! <span style="color: red;">₹ 1</span></span>
                 <img width="200" height="200" src="assets/images/QrCode.png">
                 <span class="payScam">Please Do not Refresh page!!</span>
-                <span class="payScam">You can always Pay Later, Click Next or Go Back.</span>
+                <span class="payScam">You can always Pay Later, Click Save or Go Back.</span>
+            </div>
+
+            <div fxLayout="column" fxLayoutAlign="center center" class="mt-5">
+                <mat-radio-group aria-label="Select an option" value="1">
+                    <mat-radio-button class="pay" value="1" >Pay On Delivery!! </mat-radio-button>
+                    <!-- <mat-radio-button class="pay" value="2">Pay Now!!</mat-radio-button> -->
+                  </mat-radio-group>
             </div>
 
             <div  dir="rtl" fxLayoutGap="20px">
-                <button mat-raised-button color="primary" matStepperNext>Next</button>
-                <button mat-raised-button color="primary" matStepperPrevious>Back</button>
+                <!-- <button mat-raised-button color="primary" matTooltip="Next" matStepperNext><mat-icon>skip_next</mat-icon></button> -->
+                <button mat-raised-button color="primary" matTooltip="Back" matStepperPrevious><mat-icon>skip_previous</mat-icon></button>
+                <button mat-raised-button matTooltip="Save" color="accent" (click)="save()"><mat-icon>save</mat-icon></button>
+                <!-- <button mat-raised-button color="primary" matTooltip="Reset" (click)="stepper.reset()"><mat-icon>refresh</mat-icon></button> -->
+
             </div>
         </form>
     </mat-card>
 </mat-card>
+

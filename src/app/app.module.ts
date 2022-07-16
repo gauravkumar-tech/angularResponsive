@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxUiLoaderConfig, NgxUiLoaderModule } from "ngx-ui-loader";
 import { PagenotfoundComponent } from './404pageNotFound/pagenotfound/pagenotfound.component';
 import { RouterModule } from '@angular/router';
@@ -16,6 +16,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { UserModule } from './user/user.module';
+import { RepairSaveService } from './services/repair-save.service';
 
 
 let ngxConig :NgxUiLoaderConfig  =
@@ -74,7 +75,7 @@ let ngxConig :NgxUiLoaderConfig  =
 
     
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:RepairSaveService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

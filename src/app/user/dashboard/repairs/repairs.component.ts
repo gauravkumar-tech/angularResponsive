@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { RepairSaveService } from 'src/app/services/repair-save.service';
 
 @Component({
   selector: 'app-repairs',
@@ -17,9 +19,13 @@ export class RepairsComponent implements OnInit {
   getVal !: string
 
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private saveService: RepairSaveService) {}
   ngOnInit(): void {
     
+  }
+
+  restForm(){
+    this.saveService.changeObj(this.saveService.defeaultUserObj)
   }
 
 }

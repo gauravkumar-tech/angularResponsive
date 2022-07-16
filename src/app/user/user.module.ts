@@ -30,6 +30,7 @@ import { StepperTwoComponent } from './dashboard/repairs/stepper-two/stepper-two
 import {MatTableModule} from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { StepperThreeComponent } from './dashboard/repairs/stepper-three/stepper-three.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { StepperThreeComponent } from './dashboard/repairs/stepper-three/stepper
     MatInputModule,
     MatSelectModule,
     MatTableModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatRadioModule
   ],
   exports:[
     DashboardComponent,
