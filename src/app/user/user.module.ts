@@ -32,6 +32,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { StepperThreeComponent } from './dashboard/repairs/stepper-three/stepper-three.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { AllrepairsComponent } from './dashboard/allrepairs/allrepairs.component';
+import { DeveloperswebsiteComponent } from './dashboard/developerswebsite/developerswebsite.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { AllrepairsComponent } from './dashboard/allrepairs/allrepairs.component
     StepperTwoComponent,
     StepperThreeComponent,
     AllrepairsComponent,
+    DeveloperswebsiteComponent,
   ],
   imports: [
     CommonModule,

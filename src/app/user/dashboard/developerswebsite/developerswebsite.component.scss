@@ -1,0 +1,25 @@
+
+.child{
+    margin: 0.5px;
+    position: relative;
+    float: right;
+    height: 100%;
+    width: 100%;
+    // background-color: #BFD7ED;
+}
+
+
+.mat-table {
+    height: 550px;
+    // border: 2px solid black;
+    overflow: auto;
+}
+
+
+.change-font{
+    font-family: 'Gulzar', serif;
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bold;
+}
